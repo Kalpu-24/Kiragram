@@ -13,7 +13,7 @@ import android.view.View;
 
 import com.google.android.exoplayer2.util.Log;
 
-import org.telegram.ui.Cells.ChatMessageCell;
+import org.kiragram.ui.Cells.ChatMessageCell;
 
 import java.util.ArrayList;
 import java.util.Arrays;

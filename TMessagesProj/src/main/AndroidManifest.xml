@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
-    package="org.telegram.messenger"
+    package="org.kiragram.messenger"
     android:installLocation="auto">
 
     <supports-screens android:anyDensity="true"
@@ -90,14 +90,14 @@
     </queries>
 
     <application
-        android:name="org.telegram.messenger.ApplicationLoader"
+        android:name="org.kiragram.messenger.ApplicationLoader"
         android:allowBackup="true"
         android:restoreAnyVersion="true"
         android:backupAgent=".BackupAgent"
         android:hardwareAccelerated="@bool/useHardwareAcceleration"
         android:largeHeap="true"
         android:theme="@style/Theme.TMessages.Start"
-        android:manageSpaceActivity="org.telegram.ui.ExternalActionActivity"
+        android:manageSpaceActivity="org.kiragram.ui.ExternalActionActivity"
         android:supportsRtl="false"
         android:requestLegacyExternalStorage="true"
         android:preserveLegacyExternalStorage="true"
@@ -106,8 +106,8 @@
 
         <activity-alias
             android:enabled="true"
-            android:name="org.telegram.messenger.DefaultIcon"
-            android:targetActivity="org.telegram.ui.LaunchActivity"
+            android:name="org.kiragram.messenger.DefaultIcon"
+            android:targetActivity="org.kiragram.ui.LaunchActivity"
             android:exported="true">
 
             <intent-filter>
@@ -120,8 +120,8 @@
 
         <activity-alias
             android:enabled="false"
-            android:name="org.telegram.messenger.VintageIcon"
-            android:targetActivity="org.telegram.ui.LaunchActivity"
+            android:name="org.kiragram.messenger.VintageIcon"
+            android:targetActivity="org.kiragram.ui.LaunchActivity"
             android:icon="@mipmap/icon_6_launcher"
             android:roundIcon="@mipmap/icon_6_launcher_round"
             android:exported="true">
@@ -136,8 +136,8 @@
 
         <activity-alias
             android:enabled="false"
-            android:name="org.telegram.messenger.AquaIcon"
-            android:targetActivity="org.telegram.ui.LaunchActivity"
+            android:name="org.kiragram.messenger.AquaIcon"
+            android:targetActivity="org.kiragram.ui.LaunchActivity"
             android:icon="@mipmap/icon_4_launcher"
             android:roundIcon="@mipmap/icon_4_launcher_round"
             android:exported="true">
@@ -152,8 +152,8 @@
 
         <activity-alias
             android:enabled="false"
-            android:name="org.telegram.messenger.PremiumIcon"
-            android:targetActivity="org.telegram.ui.LaunchActivity"
+            android:name="org.kiragram.messenger.PremiumIcon"
+            android:targetActivity="org.kiragram.ui.LaunchActivity"
             android:icon="@mipmap/icon_3_launcher"
             android:roundIcon="@mipmap/icon_3_launcher_round"
             android:exported="true">
@@ -168,8 +168,8 @@
 
         <activity-alias
             android:enabled="false"
-            android:name="org.telegram.messenger.TurboIcon"
-            android:targetActivity="org.telegram.ui.LaunchActivity"
+            android:name="org.kiragram.messenger.TurboIcon"
+            android:targetActivity="org.kiragram.ui.LaunchActivity"
             android:icon="@mipmap/icon_5_launcher"
             android:roundIcon="@mipmap/icon_5_launcher_round"
             android:exported="true">
@@ -184,8 +184,8 @@
 
         <activity-alias
             android:enabled="false"
-            android:name="org.telegram.messenger.NoxIcon"
-            android:targetActivity="org.telegram.ui.LaunchActivity"
+            android:name="org.kiragram.messenger.NoxIcon"
+            android:targetActivity="org.kiragram.ui.LaunchActivity"
             android:icon="@mipmap/icon_2_launcher"
             android:roundIcon="@mipmap/icon_2_launcher_round"
             android:exported="true">
@@ -199,7 +199,7 @@
         </activity-alias>
 
         <activity
-            android:name="org.telegram.ui.LaunchActivity"
+            android:name="org.kiragram.ui.LaunchActivity"
             android:theme="@style/Theme.TMessages.Start"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
             android:hardwareAccelerated="@bool/useHardwareAcceleration"
@@ -242,7 +242,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="vnd.android.cursor.item/vnd.org.telegram.messenger.android.profile"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.org.kiragram.messenger.android.profile"/>
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
@@ -262,7 +262,7 @@
                 <data android:scheme="tg" />
             </intent-filter>
             <intent-filter>
-                <action android:name="org.telegram.messenger.CREATE_STICKER_PACK"/>
+                <action android:name="org.kiragram.messenger.CREATE_STICKER_PACK"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:mimeType="*/*"/>
             </intent-filter>
@@ -273,19 +273,19 @@
                 android:value="subject_segment" />
         </activity>
         <activity-alias
-            android:name="org.telegram.ui.CallsActivity"
-            android:targetActivity="org.telegram.ui.LaunchActivity"
+            android:name="org.kiragram.ui.CallsActivity"
+            android:targetActivity="org.kiragram.ui.LaunchActivity"
             android:permission="android.permission.CALL_PHONE"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="vnd.android.cursor.item/vnd.org.telegram.messenger.android.call"/>
-                <data android:mimeType="vnd.android.cursor.item/vnd.org.telegram.messenger.android.call.video"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.org.kiragram.messenger.android.call"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.org.kiragram.messenger.android.call.video"/>
             </intent-filter>
         </activity-alias>
         <activity
-            android:name="org.telegram.ui.BubbleActivity"
+            android:name="org.kiragram.ui.BubbleActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
             android:hardwareAccelerated="@bool/useHardwareAcceleration"
             android:windowSoftInputMode="adjustResize"
@@ -293,7 +293,7 @@
             android:documentLaunchMode="always"
             android:resizeableActivity="true"/>
         <activity
-            android:name="org.telegram.ui.ShareActivity"
+            android:name="org.kiragram.ui.ShareActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
             android:hardwareAccelerated="@bool/useHardwareAcceleration"
             android:windowSoftInputMode="adjustPan"
@@ -309,18 +309,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="org.telegram.ui.ExternalActionActivity"
+            android:name="org.kiragram.ui.ExternalActionActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
             android:hardwareAccelerated="@bool/useHardwareAcceleration"
             android:windowSoftInputMode="adjustPan"
             android:exported="true">
             <intent-filter android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round">
-                <action android:name="org.telegram.passport.AUTHORIZE"/>
+                <action android:name="org.kiragram.passport.AUTHORIZE"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
         <activity
-            android:name="org.telegram.ui.ChatsWidgetConfigActivity"
+            android:name="org.kiragram.ui.ChatsWidgetConfigActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
             android:hardwareAccelerated="@bool/useHardwareAcceleration"
             android:windowSoftInputMode="adjustPan"
@@ -330,7 +330,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="org.telegram.ui.ContactsWidgetConfigActivity"
+            android:name="org.kiragram.ui.ContactsWidgetConfigActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
             android:hardwareAccelerated="@bool/useHardwareAcceleration"
             android:windowSoftInputMode="adjustPan"
@@ -340,7 +340,7 @@
             </intent-filter>
         </activity>
 <!--        <activity-->
-<!--            android:name="org.telegram.ui.FeedWidgetConfigActivity"-->
+<!--            android:name="org.kiragram.ui.FeedWidgetConfigActivity"-->
 <!--            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"-->
 <!--            android:hardwareAccelerated="@bool/useHardwareAcceleration"-->
 <!--            android:windowSoftInputMode="adjustPan">-->
@@ -349,17 +349,17 @@
 <!--            </intent-filter>-->
 <!--        </activity>-->
         <activity
-            android:name="org.telegram.messenger.OpenChatReceiver"
+            android:name="org.kiragram.messenger.OpenChatReceiver"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
             android:exported="true">
         </activity>
         <activity
-            android:name="org.telegram.messenger.OpenAttachedMenuBotReceiver"
+            android:name="org.kiragram.messenger.OpenAttachedMenuBotReceiver"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
             android:exported="true">
         </activity>
         <activity
-            android:name="org.telegram.ui.PopupNotificationActivity"
+            android:name="org.kiragram.ui.PopupNotificationActivity"
             android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:excludeFromRecents="true"
             android:launchMode="singleTask"
@@ -368,12 +368,12 @@
             android:resizeableActivity="false"
             android:windowSoftInputMode="adjustResize|stateHidden">
         </activity>
-        <activity android:name="org.telegram.ui.VoIPPermissionActivity"
+        <activity android:name="org.kiragram.ui.VoIPPermissionActivity"
                   android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
                   android:taskAffinity="${applicationId}.voip"
                   android:excludeFromRecents="true"
                 android:theme="@style/Theme.TMessages.Transparent"/>
-        <activity android:name="org.telegram.ui.VoIPFeedbackActivity"
+        <activity android:name="org.kiragram.ui.VoIPFeedbackActivity"
                   android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
 				  android:taskAffinity="${applicationId}.voip_feedback"
                   android:excludeFromRecents="true"
@@ -383,7 +383,7 @@
             android:name=".AutoMessageHeardReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="org.telegram.messenger.ACTION_MESSAGE_HEARD"/>
+                <action android:name="org.kiragram.messenger.ACTION_MESSAGE_HEARD"/>
             </intent-filter>
         </receiver>
 
@@ -399,7 +399,7 @@
             android:name=".AutoMessageReplyReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="org.telegram.messenger.ACTION_MESSAGE_REPLY"/>
+                <action android:name="org.kiragram.messenger.ACTION_MESSAGE_REPLY"/>
             </intent-filter>
         </receiver>
 
@@ -442,7 +442,7 @@
         <service android:name=".NotificationsService" android:enabled="true"  android:exported="true"/>
         <service android:name=".NotificationRepeat" android:exported="false"/>
         <service android:name=".VideoEncodingService" android:enabled="true" android:exported="true"/>
-        <service android:name="org.telegram.ui.Stories.recorder.StoryUploadingService" android:enabled="true" android:exported="true"/>
+        <service android:name="org.kiragram.ui.Stories.recorder.StoryUploadingService" android:enabled="true" android:exported="true"/>
         <service android:name=".ImportingService" android:enabled="true" android:exported="true"/>
         <service android:name=".LocationSharingService"
             android:foregroundServiceType="location"
@@ -463,11 +463,11 @@
 
 		<receiver android:name=".MusicPlayerReceiver" android:exported="false">
             <intent-filter>
-                <action android:name="org.telegram.android.musicplayer.close" />
-                <action android:name="org.telegram.android.musicplayer.pause" />
-                <action android:name="org.telegram.android.musicplayer.next" />
-                <action android:name="org.telegram.android.musicplayer.play" />
-                <action android:name="org.telegram.android.musicplayer.previous" />
+                <action android:name="org.kiragram.android.musicplayer.close" />
+                <action android:name="org.kiragram.android.musicplayer.pause" />
+                <action android:name="org.kiragram.android.musicplayer.next" />
+                <action android:name="org.kiragram.android.musicplayer.play" />
+                <action android:name="org.kiragram.android.musicplayer.previous" />
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
                 <action android:name="android.media.AUDIO_BECOMING_NOISY" />
             </intent-filter>
@@ -480,7 +480,7 @@
 
         <receiver android:name=".AppStartReceiver" android:enabled="true" android:exported="false">
             <intent-filter>
-                <action android:name="org.telegram.start" />
+                <action android:name="org.kiragram.start" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>

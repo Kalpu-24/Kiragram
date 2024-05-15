@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="org.telegram.messenger.web"
+    package="org.kiragram.messenger.web"
     android:installLocation="auto">
 
-    <application android:name="org.telegram.messenger.ApplicationLoaderImpl" tools:replace="name">
-        <service android:name="org.telegram.messenger.GoogleVoiceClientService" android:exported="true"/>
+    <application android:name="org.kiragram.messenger.ApplicationLoaderImpl" tools:replace="name">
+        <service android:name="org.kiragram.messenger.GoogleVoiceClientService" android:exported="true"/>
         <activity
-            android:name="org.telegram.messenger.GoogleVoiceClientActivity"
+            android:name="org.kiragram.messenger.GoogleVoiceClientActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.google.android.voicesearch.SEND_MESSAGE_TO_CONTACTS" />
@@ -16,6 +16,6 @@
             </intent-filter>
         </activity>
 
-        <service android:name="org.telegram.messenger.SMSJobsNotification" android:enabled="true" android:exported="true"/>
+        <service android:name="org.kiragram.messenger.SMSJobsNotification" android:enabled="true" android:exported="true"/>
     </application>
 </manifest>

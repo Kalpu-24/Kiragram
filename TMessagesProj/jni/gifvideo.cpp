@@ -840,7 +840,7 @@ enum PARAM_NUM {
     PARAM_NUM_COUNT = 11,
 };
 
-extern "C" JNIEXPORT void JNICALL Java_org_telegram_ui_Components_AnimatedFileDrawable_getVideoInfo(JNIEnv *env, jclass clazz,jint sdkVersion, jstring src, jintArray data) {
+extern "C" JNIEXPORT void JNICALL Java_org_kiragram_ui_Components_AnimatedFileDrawable_getVideoInfo(JNIEnv *env, jclass clazz,jint sdkVersion, jstring src, jintArray data) {
     VideoInfo *info = new VideoInfo();
 
     char const *srcString = env->GetStringUTFChars(src, 0);
@@ -942,7 +942,7 @@ extern "C" JNIEXPORT void JNICALL Java_org_telegram_ui_Components_AnimatedFileDr
     }
 }
 
-extern "C" JNIEXPORT jlong JNICALL Java_org_telegram_ui_Components_AnimatedFileDrawable_createDecoder(JNIEnv *env, jclass clazz, jstring src, jintArray data, jint account, jlong streamFileSize, jobject stream, jboolean preview) {
+extern "C" JNIEXPORT jlong JNICALL Java_org_kiragram_ui_Components_AnimatedFileDrawable_createDecoder(JNIEnv *env, jclass clazz, jstring src, jintArray data, jint account, jlong streamFileSize, jobject stream, jboolean preview) {
     VideoInfo *info = new VideoInfo();
 
     char const *srcString = env->GetStringUTFChars(src, 0);
@@ -1065,7 +1065,7 @@ extern "C" JNIEXPORT jlong JNICALL Java_org_telegram_ui_Components_AnimatedFileD
     return (jlong) (intptr_t) info;
 }
 
-extern "C" JNIEXPORT void JNICALL Java_org_telegram_ui_Components_AnimatedFileDrawable_destroyDecoder(JNIEnv *env, jclass clazz, jlong ptr) {
+extern "C" JNIEXPORT void JNICALL Java_org_kiragram_ui_Components_AnimatedFileDrawable_destroyDecoder(JNIEnv *env, jclass clazz, jlong ptr) {
     if (ptr == NULL) {
         return;
     }
@@ -1090,7 +1090,7 @@ extern "C" JNIEXPORT void JNICALL Java_org_telegram_ui_Components_AnimatedFileDr
     delete info;
 }
 
-extern "C" JNIEXPORT void JNICALL Java_org_telegram_ui_Components_AnimatedFileDrawable_stopDecoder(JNIEnv *env, jclass clazz, jlong ptr) {
+extern "C" JNIEXPORT void JNICALL Java_org_kiragram_ui_Components_AnimatedFileDrawable_stopDecoder(JNIEnv *env, jclass clazz, jlong ptr) {
     if (ptr == NULL) {
         return;
     }
@@ -1098,7 +1098,7 @@ extern "C" JNIEXPORT void JNICALL Java_org_telegram_ui_Components_AnimatedFileDr
     info->stopped = true;
 }
 
-extern "C" JNIEXPORT void JNICALL Java_org_telegram_ui_Components_AnimatedFileDrawable_prepareToSeek(JNIEnv *env, jclass clazz, jlong ptr) {
+extern "C" JNIEXPORT void JNICALL Java_org_kiragram_ui_Components_AnimatedFileDrawable_prepareToSeek(JNIEnv *env, jclass clazz, jlong ptr) {
     if (ptr == NULL) {
         return;
     }
@@ -1106,7 +1106,7 @@ extern "C" JNIEXPORT void JNICALL Java_org_telegram_ui_Components_AnimatedFileDr
     info->seeking = true;
 }
 
-extern "C" JNIEXPORT void JNICALL Java_org_telegram_ui_Components_AnimatedFileDrawable_seekToMs(JNIEnv *env, jclass clazz, jlong ptr, jlong ms, jboolean precise) {
+extern "C" JNIEXPORT void JNICALL Java_org_kiragram_ui_Components_AnimatedFileDrawable_seekToMs(JNIEnv *env, jclass clazz, jlong ptr, jlong ms, jboolean precise) {
     if (ptr == NULL) {
         return;
     }
@@ -1239,7 +1239,7 @@ static inline void writeFrameToBitmap(JNIEnv *env, VideoInfo *info, jintArray da
     }
 }
 
-extern "C" JNIEXPORT int JNICALL Java_org_telegram_ui_Components_AnimatedFileDrawable_getFrameAtTime(JNIEnv *env, jclass clazz, jlong ptr, jlong ms, jobject bitmap, jintArray data, jint stride) {
+extern "C" JNIEXPORT int JNICALL Java_org_kiragram_ui_Components_AnimatedFileDrawable_getFrameAtTime(JNIEnv *env, jclass clazz, jlong ptr, jlong ms, jobject bitmap, jintArray data, jint stride) {
     if (ptr == NULL || bitmap == nullptr || data == nullptr) {
         return 0;
     }
@@ -1339,7 +1339,7 @@ extern "C" JNIEXPORT int JNICALL Java_org_telegram_ui_Components_AnimatedFileDra
     }
 }
 
-extern "C" JNIEXPORT jint JNICALL Java_org_telegram_ui_Components_AnimatedFileDrawable_getVideoFrame(JNIEnv *env, jclass clazz, jlong ptr, jobject bitmap, jintArray data, jint stride, jboolean preview, jfloat start_time, jfloat end_time, jboolean loop) {
+extern "C" JNIEXPORT jint JNICALL Java_org_kiragram_ui_Components_AnimatedFileDrawable_getVideoFrame(JNIEnv *env, jclass clazz, jlong ptr, jobject bitmap, jintArray data, jint stride, jboolean preview, jfloat start_time, jfloat end_time, jboolean loop) {
     if (ptr == NULL || bitmap == nullptr) {
         return 0;
     }
@@ -1446,7 +1446,7 @@ extern "C" JNIEXPORT jint JNICALL Java_org_telegram_ui_Components_AnimatedFileDr
 extern "C" jint videoOnJNILoad(JavaVM *vm, JNIEnv *env) {
     //av_log_set_callback(custom_log);
     DEBUG_REF("gifvideo.cpp AnimatedFileDrawableStream ref");
-    jclass_AnimatedFileDrawableStream = (jclass) env->NewGlobalRef(env->FindClass("org/telegram/messenger/AnimatedFileDrawableStream"));
+    jclass_AnimatedFileDrawableStream = (jclass) env->NewGlobalRef(env->FindClass("org/kiragram/messenger/AnimatedFileDrawableStream"));
     if (jclass_AnimatedFileDrawableStream == 0) {
         return JNI_FALSE;
     }

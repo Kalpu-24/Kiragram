@@ -54,7 +54,7 @@ import com.google.android.exoplayer2.video.VideoSize;
 import com.google.android.exoplayer2.video.spherical.CameraMotionListener;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 
-import org.telegram.messenger.DispatchQueue;
+import org.kiragram.messenger.DispatchQueue;
 
 import java.util.List;
 

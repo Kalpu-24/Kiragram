@@ -61,7 +61,7 @@ jobject getJavaByteBuffer(JNIEnv *env, jclass c, jlong address) {
     return buffer->getJavaByteBuffer();
 }
 
-static const char *NativeByteBufferClassPathName = "org/telegram/tgnet/NativeByteBuffer";
+static const char *NativeByteBufferClassPathName = "org/kiragram/tgnet/NativeByteBuffer";
 static JNINativeMethod NativeByteBufferMethods[] = {
         {"native_getFreeBuffer", "(I)J", (void *) getFreeBuffer},
         {"native_limit", "(J)I", (void *) limit},
@@ -432,7 +432,7 @@ void setJava(JNIEnv *env, jclass c, jboolean useJavaByteBuffers) {
     }
 }
 
-static const char *ConnectionsManagerClassPathName = "org/telegram/tgnet/ConnectionsManager";
+static const char *ConnectionsManagerClassPathName = "org/kiragram/tgnet/ConnectionsManager";
 static JNINativeMethod ConnectionsManagerMethods[] = {
         {"native_getCurrentTimeMillis", "(I)J", (void *) getCurrentTimeMillis},
         {"native_getCurrentTime", "(I)I", (void *) getCurrentTime},
@@ -461,7 +461,7 @@ static JNINativeMethod ConnectionsManagerMethods[] = {
         {"native_setPushConnectionEnabled", "(IZ)V", (void *) setPushConnectionEnabled},
         {"native_setJava", "(Z)V", (void *) setJava},
         {"native_applyDnsConfig", "(IJLjava/lang/String;I)V", (void *) applyDnsConfig},
-        {"native_checkProxy", "(ILjava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/tgnet/RequestTimeDelegate;)J", (void *) checkProxy},
+        {"native_checkProxy", "(ILjava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/kiragram/tgnet/RequestTimeDelegate;)J", (void *) checkProxy},
         {"native_onHostNameResolved", "(Ljava/lang/String;JLjava/lang/String;)V", (void *) onHostNameResolved},
         {"native_discardConnection", "(III)V", (void *) discardConnection},
         {"native_failNotRunningRequest", "(II)V", (void *) failNotRunningRequest},
@@ -491,7 +491,7 @@ extern "C" int registerNativeTgNetFunctions(JavaVM *vm, JNIEnv *env) {
     }
 
     DEBUG_REF("RequestTimeDelegate class");
-    jclass_RequestTimeDelegate = (jclass) env->NewGlobalRef(env->FindClass("org/telegram/tgnet/RequestTimeDelegate"));
+    jclass_RequestTimeDelegate = (jclass) env->NewGlobalRef(env->FindClass("org/kiragram/tgnet/RequestTimeDelegate"));
     if (jclass_RequestTimeDelegate == 0) {
         return JNI_FALSE;
     }
@@ -501,7 +501,7 @@ extern "C" int registerNativeTgNetFunctions(JavaVM *vm, JNIEnv *env) {
     }
 
     DEBUG_REF("ConnectionsManager class");
-    jclass_ConnectionsManager = (jclass) env->NewGlobalRef(env->FindClass("org/telegram/tgnet/ConnectionsManager"));
+    jclass_ConnectionsManager = (jclass) env->NewGlobalRef(env->FindClass("org/kiragram/tgnet/ConnectionsManager"));
     if (jclass_ConnectionsManager == 0) {
         return JNI_FALSE;
     }

@@ -5,8 +5,8 @@
     <PreferenceScreen android:key="account_settings"
         android:title="@string/AccountSettings"
         android:summary="">
-        <intent android:action="org.telegram.messenger.OPEN_ACCOUNT"
-            android:targetPackage="org.telegram.messenger"
-            android:targetClass="org.telegram.ui.LaunchActivity"/>
+        <intent android:action="org.kiragram.messenger.OPEN_ACCOUNT"
+            android:targetPackage="org.kiragram.messenger"
+            android:targetClass="org.kiragram.ui.LaunchActivity"/>
     </PreferenceScreen>
 </PreferenceScreen>

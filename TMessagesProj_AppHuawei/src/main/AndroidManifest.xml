@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="org.telegram.messenger.huawei"
+    package="org.kiragram.messenger.huawei"
     android:installLocation="auto">
 
     <uses-permission android:name="com.huawei.appmarket.service.commondata.permission.GET_COMMON_DATA"/>
@@ -10,10 +10,10 @@
         <package android:name="com.huawei.maps.app"/>
     </queries>
 
-    <application android:name="org.telegram.messenger.HuaweiApplicationLoader" tools:replace="name">
-        <service android:name="org.telegram.messenger.GoogleVoiceClientService" android:exported="true"/>
+    <application android:name="org.kiragram.messenger.HuaweiApplicationLoader" tools:replace="name">
+        <service android:name="org.kiragram.messenger.GoogleVoiceClientService" android:exported="true"/>
         <activity
-            android:name="org.telegram.messenger.GoogleVoiceClientActivity"
+            android:name="org.kiragram.messenger.GoogleVoiceClientActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.google.android.voicesearch.SEND_MESSAGE_TO_CONTACTS" />
@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name="org.telegram.messenger.HuaweiPushListenerService" android:exported="false">
+        <service android:name="org.kiragram.messenger.HuaweiPushListenerService" android:exported="false">
             <intent-filter>
                 <action android:name="com.huawei.push.action.MESSAGING_EVENT"/>
             </intent-filter>

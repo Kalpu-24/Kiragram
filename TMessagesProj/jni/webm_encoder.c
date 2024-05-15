@@ -15,7 +15,7 @@ typedef struct {
     struct SwsContext *sws_ctx;
 } EncoderContext;
 
-JNIEXPORT jlong JNICALL Java_org_telegram_messenger_video_WebmEncoder_createEncoder(
+JNIEXPORT jlong JNICALL Java_org_kiragram_messenger_video_WebmEncoder_createEncoder(
     JNIEnv *env, jobject obj,
     jstring outputPath_,
     jint width, jint height,
@@ -134,7 +134,7 @@ JNIEXPORT jlong JNICALL Java_org_telegram_messenger_video_WebmEncoder_createEnco
     return (jlong)ctx;
 }
 
-JNIEXPORT jboolean JNICALL Java_org_telegram_messenger_video_WebmEncoder_writeFrame(
+JNIEXPORT jboolean JNICALL Java_org_kiragram_messenger_video_WebmEncoder_writeFrame(
     JNIEnv *env, jobject obj,
     jlong ptr,
     jobject argbPixels,
@@ -195,7 +195,7 @@ JNIEXPORT jboolean JNICALL Java_org_telegram_messenger_video_WebmEncoder_writeFr
     return JNI_TRUE;
 }
 
-JNIEXPORT void JNICALL Java_org_telegram_messenger_video_WebmEncoder_stop(
+JNIEXPORT void JNICALL Java_org_kiragram_messenger_video_WebmEncoder_stop(
     JNIEnv *env, jobject obj,
     jlong ptr
 ) {

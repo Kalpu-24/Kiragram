@@ -27,7 +27,7 @@ android {
     compileSdkVersion 33
     buildToolsVersion '33.0.0'
 
-    defaultConfig.applicationId = APP_PACKAGE
+    defaultConfig.applicationId = "org.kiragram.messenger"
 
     sourceSets.main.jniLibs.srcDirs = ['../TMessagesProj/jni/']
 
